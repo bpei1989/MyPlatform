@@ -41,6 +41,7 @@ public class TestCaseServiceImp implements TestCaseService{
 			if (test.getId() == id)
 			{
 				found = true;
+				testCase = test;
 			}
 		}
 		if (!found) {

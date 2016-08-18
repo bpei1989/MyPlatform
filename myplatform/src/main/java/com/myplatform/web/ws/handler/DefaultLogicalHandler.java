@@ -28,10 +28,10 @@ public class DefaultLogicalHandler implements LogicalHandler<LogicalMessageConte
 		Boolean outboundProperty = (Boolean) logicalMessageContext.get(MessageContext.MESSAGE_OUTBOUND_PROPERTY);
 
 		if (outboundProperty) {
-			logger.info("传出");
+			logger.info("handler in");
 		} 
 		else {
-			logger.info("传入");
+			logger.info("handler out");
 		}
 
 		LogicalMessage logicalMessage = logicalMessageContext.getMessage();
@@ -47,7 +47,7 @@ public class DefaultLogicalHandler implements LogicalHandler<LogicalMessageConte
 			logger.info("SOAP\n" + new String(out.toByteArray(), "UTF-8"));
 		} 
 		catch (Exception ex) {
-			logger.error("异常", ex);
+			logger.error("exception", ex);
 		}
 
 		return true;

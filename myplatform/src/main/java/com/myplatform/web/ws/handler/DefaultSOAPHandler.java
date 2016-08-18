@@ -23,24 +23,24 @@ public class DefaultSOAPHandler implements SOAPHandler<SOAPMessageContext>
 	@Override
 	public boolean handleMessage(SOAPMessageContext soapMessageContext) 
 	{
-		logger.info("=========  handleMessage ========= ");
+		logger.info("=========  Handle SOAP Message ========= ");
 		
 		Boolean outboundProperty = (Boolean) soapMessageContext.get(MessageContext.MESSAGE_OUTBOUND_PROPERTY);
 		SOAPMessage message = soapMessageContext.getMessage();
 		
 		if (outboundProperty) 
 		{
-			logger.info("传入消息");
+			logger.info("soap in");
 		} 
 		else 
 		{
-			logger.info("传出消息");
+			logger.info("soap out");
 
 			QName qname = new QName("http://ws.cxf.testcase.com/", "TestCase");
 			try 
 			{
 				SOAPHeaderElement soapHeaderElement = message.getSOAPHeader().addHeaderElement(qname);
-				soapHeaderElement.addTextNode("valor");
+				soapHeaderElement.addTextNode("justForTesting");
 				message.saveChanges();
 			} 
 			catch (SOAPException ex) 
@@ -61,7 +61,7 @@ public class DefaultSOAPHandler implements SOAPHandler<SOAPMessageContext>
 			logger.error("handle SOAP exception", ex);
 		}
 
-		logger.info("======= fin  handleMessage ========= ");
+		logger.info("======= HandleMessage Finished========= ");
 
 		return true;
 
