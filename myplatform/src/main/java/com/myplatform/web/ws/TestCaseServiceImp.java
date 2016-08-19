@@ -12,9 +12,12 @@ import javax.xml.ws.WebServiceContext;
 import javax.xml.ws.handler.MessageContext;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.myplatform.web.model.TestCase;
+import com.myplatform.web.dao.TestCaseDao;
+import com.myplatform.web.entity.TestCase;
+
 
 @Service(value="testCaseService")
 @BindingType(javax.xml.ws.soap.SOAPBinding.SOAP12HTTP_BINDING)
@@ -22,6 +25,17 @@ public class TestCaseServiceImp implements TestCaseService{
 	private static final Logger logger = Logger.getLogger(TestCaseServiceImp.class);
 	 
 	private List<TestCase> list = null;
+	
+	@Autowired
+	private TestCaseDao testCaseDao;
+	
+	@Override
+	public List<TestCase> getTestCaseList(int offset, int limit) {
+		List<TestCase> result;
+		result = testCaseDao.queryAll(offset, limit);
+		logger.info("Get test case list for db");
+		return result;
+	}
 	
 	public TestCaseServiceImp() {        
 	    list = new LinkedList<TestCase>();
