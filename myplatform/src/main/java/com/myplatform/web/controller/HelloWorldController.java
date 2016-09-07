@@ -18,7 +18,8 @@ public class HelloWorldController {
 		logger.debug("Method hello");
 		return "hello";
 	}
-
+	
+	
 	@RequestMapping(value = "/hello-world", method = RequestMethod.GET)
 	public String helloWorld() {
 		logger.debug("Method helloWorld");
