@@ -1,2 +1,3 @@
 # MyPlatform
-My practice platform for java web
+A platform for test cases record. Based on spring, spring mvc, mybatis, cxf, support webservice access.
+
