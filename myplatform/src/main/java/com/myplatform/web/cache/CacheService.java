@@ -111,14 +111,24 @@ public class CacheService {
 	}
 	
 	/**
-	 * hash
+	 * hash置值
 	 * 
 	 * @param key
-	 * @param index
+	 * @param field
 	 * @param value
 	 */
 	public void put(String key, String field, String value) {
 		stringRedisTemplate.opsForHash().put(key, field, field);
+	}
+	
+	/**
+	 * hash置值
+	 * 
+	 * @param key
+	 * @param field
+	 */
+	public void remove(String key, String field) {
+		stringRedisTemplate.opsForHash().delete(key, field);;
 	}
 
 	/**
