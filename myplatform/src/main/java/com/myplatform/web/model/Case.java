@@ -1,16 +1,16 @@
 package com.myplatform.web.model;
 
-public class TestCase {
+public class Case {
 	private int id;
 	private String level;
 	private String descripton;
 	
-	public TestCase()
+	public Case()
 	{
 		super();
 	}
 	
-	public TestCase(int id, String level, String descripton)
+	public Case(int id, String level, String descripton)
 	{
 		super();
 		this.id = id;
