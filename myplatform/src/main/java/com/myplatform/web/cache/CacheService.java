@@ -109,6 +109,17 @@ public class CacheService {
 	public void set(String key, long index, String value) {
 		stringRedisTemplate.opsForList().set(key, index, value);
 	}
+	
+	/**
+	 * hash
+	 * 
+	 * @param key
+	 * @param index
+	 * @param value
+	 */
+	public void put(String key, String field, String value) {
+		stringRedisTemplate.opsForHash().put(key, field, field);
+	}
 
 	/**
 	 * 区间
