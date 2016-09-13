@@ -1,15 +1,60 @@
 <!doctype html>
 <html>
 	<head>
-		<title>$!page_title</title>
-		<link href="#springUrl('/resources/css/reset.css')" rel="stylesheet" type="text/css" />
-		<link href="#springUrl('/resources/css/style.css')" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8">
+    <title>My TestCase Lib</title>
+
+    <link rel="stylesheet" href="#springUrl('/resources/assets/css/bootstrap.min.css')" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="#springUrl('resources/css/custom-theme/jquery-ui-1.10.3.custom.css')" type="text/css"/>
+    <link rel="stylesheet" href="#springUrl('resources/assets/css/font-awesome.min.css')" type="text/css" />
+    <link rel="stylesheet" href="#springUrl('resources/assets/css/docs.css')" type="text/css" />
+    <link rel="stylesheet" href="#springUrl('resources/assets/js/google-code-prettify/prettify.css')" type="text/css" />
+
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="#springUrl('resources/assets/ico/apple-touch-icon-144-precomposed.png')"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="#springUrl('resources/assets/ico/apple-touch-icon-114-precomposed.png')"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="#springUrl('resources/assets/ico/apple-touch-icon-72-precomposed.png')"/>
+    <link rel="apple-touch-icon-precomposed" href="#springUrl('resources/assets/ico/apple-touch-icon-57-precomposed.png')"/>
+    <link rel="shortcut icon" href="#springUrl('resources/assets/ico/favicon.png')"/>
+
 	</head>
-	<body>
-		<article>
-			<header>#parse('/layout/header.vm')</header>
-			<section>$!content</section>
-			<footer>#parse('/layout/footer.vm')</footer>
-		</article>
+	<body data-spy="scroll" data-target=".bs-docs-sidebar" data-twttr-rendered="true">
+
+
+    <header class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+              <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="http://github.com/addyosmani/jquery-ui-bootstrap">My TestCase Lib</a>
+            </div>
+            <nav class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="./no">DashBoard</a>
+                    </li>
+                    <li>
+                        <a href="./no">Add</a>
+                    </li>
+                    <li>
+                        <a href="./no">Query</a>
+                    </li>
+                    <li>
+                        <a href="./no">Update</a>
+                    </li>
+                    <li>
+                        <a href="./no">Run</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
 	</body>
+
+
+
 </html>

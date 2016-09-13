@@ -13,10 +13,10 @@ public class HelloWorldController {
 	
 	private final Logger logger = LoggerFactory.getLogger(getClass());
 
-	@RequestMapping(value = "/hello", method = RequestMethod.GET)
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public String hello() {
 		logger.debug("Method hello");
-		return "hello";
+		return "home";
 	}
 	
 	
@@ -30,6 +30,12 @@ public class HelloWorldController {
 	public String helloRedirect() {
 		logger.debug("Method helloRedirect");
 		return "redirect:/hello-world";
+	}
+	
+	@RequestMapping(value = "/no", method = RequestMethod.GET)
+	public String no() {
+		logger.debug("Not Finished");
+		return "no";
 	}
 
 }
