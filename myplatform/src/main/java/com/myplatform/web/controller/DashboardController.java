@@ -10,24 +10,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.myplatform.web.ws.TestCaseServiceImp;
+
 
 @Controller
-public class SayHelloController {
+public class DashboardController {
 	private final Logger logger = LoggerFactory.getLogger(getClass());
 
-	@RequestMapping(value = "/greet/{name}", method = RequestMethod.GET)
-	public String greetPath(@PathVariable String name, ModelMap model) {
+	@RequestMapping(value = "/dashboard.htm", method = RequestMethod.GET)
+	public String greetPath(ModelMap model) {
 		logger.debug("Method greetPath");
-		model.addAttribute("name", name);
-		return "greetings";
+		//model.addAttribute("name", name);
+		TestCaseServiceImp testCase = new TestCaseServiceImp();
+		return "dashboard";
 	}
 
-	@RequestMapping(value = "/greet", method = RequestMethod.GET)
-	public String greetRequest(
-			@RequestParam(required = false, defaultValue = "John Doe") String name,
-			ModelMap model) {
-		logger.debug("Method greetRequest");
-		model.addAttribute("name", name);
-		return "greetings";
+	@RequestMapping(value = "/home.htm", method = RequestMethod.GET)
+	public String hello() {
+		logger.debug("Method hello");
+		return "home";
 	}
 }

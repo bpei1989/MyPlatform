@@ -48,7 +48,7 @@ $(function(){
                 draggable: false
             },
             events:{
-                click: function (marker, event, context) {
+                click: function (marker, event, context){
                     selectCity(context.data.index, true);
                 }
             }
