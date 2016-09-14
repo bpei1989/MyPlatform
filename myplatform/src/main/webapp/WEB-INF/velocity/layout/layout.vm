@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 	<head>
     <meta charset="utf-8">
     <title>My TestCase Lib</title>
@@ -50,8 +51,14 @@
             </nav>
         </div>
     </header>
-
-
+    <div class="container bs-docs-container" style="padding-top: 70px;width: 95%;">
+    	$screen_content
+    </div>
+	<!--
+	<div>
+	#parse("/layout/footer.vm")
+	</div>
+	-->
 	</body>
 
 

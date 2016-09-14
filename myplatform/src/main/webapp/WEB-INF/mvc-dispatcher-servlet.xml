@@ -25,7 +25,7 @@
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.velocity.VelocityLayoutViewResolver">
 		<property name="cache" value="false" />
-		<property name="layoutUrl" value="/layout/main.vm" />
+		<property name="layoutUrl" value="/layout/layout.vm" />
 		<property name="prefix" value="/templates/" />
 		<property name="suffix" value=".vm" />
 		<property name="exposeSpringMacroHelpers" value="true" />

@@ -1,11 +1,17 @@
 <form action="/dashboard.htm" method="get">
+<br></br>
+<br></br>
+<br></br>
 <table>
     <tr>
         <td>Total</td>
-        <td>Already Run</td>
-        <td>Pass</td>
-        <td>Not Run</td>
+        <td>Priority</td>
+        <td>Description</td>
 
     </tr>
-
+        <tr>
+            <td>$id</td>
+            <td>$level</td>
+            <td>$description</td>
+        </tr>
 </table>
