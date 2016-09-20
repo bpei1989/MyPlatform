@@ -8,15 +8,21 @@
 		limit #{offset},#{limit}
 	</select>
 
-	<update id="reduceNumber">
-		UPDATE _goods 
+	<update id="updateCase">
+		UPDATE testcase 
 		SET 
-		number = number -1
+		description = #{description},
+		level = #{level}
 		WHERE
-		goods_id = #{goodsId}
-		AND state = 1
-		AND number >0;
+		id = #{id}
 	</update>
+	
+	<insert id="addNewCase">
+		INSERT INTO testcase 
+		(level, description)
+		VALUES 
+		(#{level}, #{description})
+	</insert>
 	
 	<!--mybatis调用存储过程-->
     <select id="bugWithProcedure" statementType="CALLABLE">

@@ -1,17 +1,54 @@
 <form action="/dashboard.htm" method="get">
-<br></br>
-<br></br>
-<br></br>
-<table>
-    <tr>
-        <td>Total</td>
-        <td>Priority</td>
-        <td>Description</td>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.js"></script>
+<script src="../../../resources/jquery/jquery-3.1.0.min.js"></script>
 
-    </tr>
-        <tr>
-            <td>$id</td>
-            <td>$level</td>
-            <td>$description</td>
-        </tr>
-</table>
+
+        <canvas id="myChart" width="400" height="400"></canvas>
+        <script type="text/javascript">
+            var ctx = document.getElementById("myChart").getContext("2d");
+            var data = [
+    {
+        value: 30,
+        color:"#F38630"
+    },
+    {
+        value : 50,
+        color : "#E0E4CC"
+    },
+    {
+        value : 100,
+        color : "#69D2E7"
+    }            
+]
+            /// 动画效果
+            var options = {
+    //Boolean - Whether we should show a stroke on each segment
+    segmentShowStroke : true,
+    
+    //String - The colour of each segment stroke
+    segmentStrokeColor : "#fff",
+    
+    //Number - The width of each segment stroke
+    segmentStrokeWidth : 2,
+    
+    //Boolean - Whether we should animate the chart    
+    animation : true,
+    
+    //Number - Amount of animation steps
+    animationSteps : 100,
+    
+    //String - Animation easing effect
+    animationEasing : "easeOutBounce",
+    
+    //Boolean - Whether we animate the rotation of the Pie
+    animateRotate : true,
+
+    //Boolean - Whether we animate scaling the Pie from the centre
+    animateScale : false,
+    
+    //Function - Will fire on animation completion.
+    onAnimationComplete : null
+}
+            /// 创建对象，生成图表
+            new Chart(ctx).Pie(data,options);
+        </script>
